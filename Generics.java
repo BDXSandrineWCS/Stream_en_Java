@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Generics {
 
@@ -32,23 +33,30 @@ public class Generics {
         List<Integer> ints = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
         List<String> strs = Arrays.asList("tout", "titi", "ototo", "jean", "tous", "taratata");
 
-        //  Ne retourner que les nombres pairs.
+        //TODO  Ne retourner que les nombres pairs.
 
-        //TODO ints = filter(ints, i -> (0 == i % 2));
+        ints= ints
+                .stream()
+                .filter(i -> (0 == i % 2))
+                .collect(Collectors.toList());
 
-        // Multiplier par 2 chaque élément de la liste.
+        //TODO  Multiplier par 2 chaque élément de la liste.
 
-       //TODO ints = map(ints, i -> i * 2);
+        ints = ints
+                .stream()
+                .map(i -> i * 2)
+                .collect(Collectors.toList());
+
         for (Integer i : ints) System.out.println(i);
 
-        // Ne retourner que les Strings contenant au moins 2 lettres t.
+        //TODO Ne retourner que les Strings contenant au moins 2 lettres t.
 
         String exp = "(.*[t].*){2,}";
-        //TODO strs = filter(strs, s -> s.matches(exp));
+        strs= strs.stream().filter(s -> s.matches(exp)).collect(Collectors.toList());
 
-        //Passer en majuscule toutes les Strings
+        //TODO Passer en majuscule toutes les Strings
 
-        //TODO strs = map(strs, String::toUpperCase);
+        strs = strs.stream().map(String::toUpperCase).collect(Collectors.toList());
 
         for (String s : strs) System.out.println(s);
 
