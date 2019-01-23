@@ -34,73 +34,25 @@ public class Generics {
 
         //  Ne retourner que les nombres pairs.
 
-        ints = filter(ints, i -> (0 == i % 2));
+        //TODO ints = filter(ints, i -> (0 == i % 2));
 
         // Multiplier par 2 chaque élément de la liste.
 
-        ints = map(ints, i -> i * 2);
+       //TODO ints = map(ints, i -> i * 2);
         for (Integer i : ints) System.out.println(i);
 
         // Ne retourner que les Strings contenant au moins 2 lettres t.
 
         String exp = "(.*[t].*){2,}";
-        strs = filter(strs, s -> s.matches(exp));
+        //TODO strs = filter(strs, s -> s.matches(exp));
 
         //Passer en majuscule toutes les Strings
 
-        strs = map(strs, String::toUpperCase);
+        //TODO strs = map(strs, String::toUpperCase);
 
         for (String s : strs) System.out.println(s);
 
     }
 
-    /**
-     * Returns a list consisting of the elements of a collection that match the given predicate.
-     *
-     * @param c   Collection<T>: The input collection
-     * @param p   The predicate
-     * @param <T> Type of the element in the collection
-     * @return A list that match the given filter.
-     */
-    private <T> List<T> filter(Collection<T> c, Predicate<T> p) {
-
-        List<T> result = new ArrayList<>();
-
-        //  Ajouter le code ici
-
-        c.forEach(e -> {
-
-            if (p.filter(e)) result.add(e);
-
-        });
-
-        // Retourner 'result' contenant les éléments de Collection filtrés par la méthode o.filter().
-
-        return result;
-
-    }
-
-    /**
-     * Returns a list consisting of the results of applying the given function to the elements of the collection.
-     *
-     * @param c   Collection<T>: The input collection
-     * @param m   The predicate
-     * @param <T> Type of the element in the collection
-     * @param <U> Type of the element in the returned list
-     * @return A list that match the given mapper.
-     */
-    private <T, U> List<U> map(Collection<T> c, Mapper<T, U> m) {
-
-        List<U> result = new ArrayList<>();
-
-        //  Ajouter le code ici
-
-        c.forEach(e -> result.add(m.map(e)));
-
-        // Retourner 'result' contenant les éléments de la Collection modifiés par la méthode m.map().
-
-        return result;
-
-    }
 
 }
