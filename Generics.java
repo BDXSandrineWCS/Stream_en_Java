@@ -1,20 +1,9 @@
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class Generics {
-
-    interface Predicate<T> {
-
-        boolean filter(T obj);
-    }
-
-    interface Mapper<T, U> {
-
-        U map(T obj);
-    }
 
     /**
      * Java entry point
@@ -55,6 +44,5 @@ public class Generics {
         for (String s : strs) System.out.println(s);
 
     }
-
 
 }
