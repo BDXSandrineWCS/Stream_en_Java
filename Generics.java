@@ -35,13 +35,12 @@ public class Generics {
         // Ne retourner en majuscule que les Strings contenant au moins 2 lettres t.
 
         String exp = "(.*t.*){2,}";
-        strs= strs
+
+        strs
                 .stream()
                 .filter(s -> s.matches(exp))
                 .map(String::toUpperCase)
-                .collect(Collectors.toList());
-
-        for (String s : strs) System.out.println(s);
+                .forEach(System.out::println);
 
     }
 
